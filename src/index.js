@@ -2,7 +2,7 @@ import path from 'path'
 
 import _ from 'lodash'
 import postcss from 'postcss'
-import stylefmt from 'stylefmt'
+import perfectionist from 'perfectionist'
 
 import registerConfigAsDependency from './lib/registerConfigAsDependency'
 import substituteTailwindPreflightAtRule from './lib/substituteTailwindPreflightAtRule'
@@ -51,7 +51,12 @@ const plugin = postcss.plugin('tailwind', config => {
       substituteResponsiveAtRules(lazyConfig),
       substituteScreenAtRules(lazyConfig),
       substituteClassApplyAtRules(lazyConfig),
-      stylefmt,
+      perfectionist({
+        indentSize: 2,
+        cascade: false,
+        maxSelectorLength: 1,
+        maxValueLength: false,
+      }),
     ]
   )
 })
