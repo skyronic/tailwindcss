@@ -15,11 +15,14 @@
 @endsection
 
 @push('headScripts')
+@if($page->sidebar)
 <script src="{{ mix('/js/nav.js') }}"></script>
+@endif
 @endpush
 
 @section('body')
 <div class="min-h-screen">
+  @if($page->sidebar)
   <div id="sidebar" class="hidden z-50 fixed pin-y pin-l overflow-y-scroll md:overflow-visible scrolling-touch md:scrolling-auto bg-smoke-light w-4/5 md:w-full md:max-w-xs flex-none border-r-2 border-smoke md:flex flex-col">
     <div class="border-b border-smoke flex-none px-8 py-6">
       <div class="mb-4">
@@ -95,6 +98,7 @@
         </div>
       </div>
     </div>
+    @endif
     <div id="content" class="px-6 pb-8 pt-20 md:pt-16 w-full max-w-lg mx-auto">
       <div id="app" v-cloak>
         <div class="markdown">

@@ -1,5 +1,6 @@
 /build_production/
 /build_local/
+/build_docset/
 /node_modules/
 /vendor/
 /source/css/
@@ -7,3 +8,5 @@
 /source/mix-manifest.json
 /tailwind.json
 /_tmp
+/docset/Tailwind.docset
+/docset/docs.sql

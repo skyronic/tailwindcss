@@ -20,4 +20,6 @@ return [
         });
     },
     'navigation' => require_once('navigation.php'),
+    'sidebar' => true,
+    'relativePaths' => false
 ];
