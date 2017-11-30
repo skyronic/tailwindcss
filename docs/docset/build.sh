@@ -1,7 +1,8 @@
 #!/bin/bash
 
-TARGET_DOCS=Tailwind.docset/Contents/Resources/Documents
-TARGET_CONTENT=Tailwind.docset/Contents
+DOCSET_BASE=Tailwind.docset
+TARGET_CONTENT=$DOCSET_BASE/Contents
+TARGET_DOCS=$TARGET_CONTENT/Resources/Documents
 DOC_SOURCE=../build_docset
 DB_FILE=$TARGET_CONTENT/Resources/docSet.dsidx
 
@@ -13,4 +14,4 @@ touch $DB_FILE
 rm docs.sql
 php gensql.php > docs.sql
 cat docs.sql | sqlite3 $DB_FILE
-
+cp $DOC_SOURCE/favicon-32x32.png $DOCSET_BASE/icon.png

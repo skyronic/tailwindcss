@@ -20,6 +20,7 @@ return [
         });
     },
     'navigation' => require_once('navigation.php'),
-    'sidebar' => true,
+    'docset' => false,
+    'docTemplate' => 'documentation',
     'relativePaths' => false
 ];

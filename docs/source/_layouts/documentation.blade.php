@@ -15,14 +15,14 @@
 @endsection
 
 @push('headScripts')
-@if($page->sidebar)
+@if(!$page->docset)
 <script src="{{ mix('/js/nav.js') }}"></script>
 @endif
 @endpush
 
 @section('body')
 <div class="min-h-screen">
-  @if($page->sidebar)
+  @if(!$page->docset)
   <div id="sidebar" class="hidden z-50 fixed pin-y pin-l overflow-y-scroll md:overflow-visible scrolling-touch md:scrolling-auto bg-smoke-light w-4/5 md:w-full md:max-w-xs flex-none border-r-2 border-smoke md:flex flex-col">
     <div class="border-b border-smoke flex-none px-8 py-6">
       <div class="mb-4">
@@ -114,7 +114,11 @@
           @yield('content')
         </div>
       </div>
+      @if($page->docset)
+      <script src="../../js/app.js"></script>
+      @else
       <script src="/js/app.js"></script>
+      @endif
     </div>
   </div>
 </div>

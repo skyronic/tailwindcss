@@ -12,10 +12,15 @@
   <title>{{ $page->title ? $page->title . ' - Tailwind CSS' : 'Tailwind CSS - A Utility-First CSS Framework for Rapid UI Development' }}</title>
   <meta name="theme-color" content="#ffffff">
   @yield('meta')
+  @if($page->docset)
+  <!-- Only include CSS for docset. -->
+  <link rel="stylesheet" href="../../css/main.css">
+  @else
   <link rel="stylesheet" href="https://use.typekit.net/iqy1okj.css">
   <link rel="stylesheet" href="{{ mix('/css/main.css') }}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  @endif
   @stack('headScripts')
 </head>
 <body data-sidebar-visible="true" class="font-sans font-normal text-slate-darker leading-normal">

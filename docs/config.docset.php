@@ -1,7 +1,6 @@
 <?php
 
 return [
-  'sidebar' => false,
-  'relativePaths' => true
+  'docset' => true
 ];
 
